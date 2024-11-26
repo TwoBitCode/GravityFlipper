@@ -1,4 +1,5 @@
 # 🌌 **GravityFlipper** 🚀
+![image](https://github.com/user-attachments/assets/79e87a12-0783-4d7f-a35d-dfc93261df7a)
 
 ### 🌟 **Description**
 **GravityFlipper** is a 2D arcade game where players defy gravity to navigate hazards and collect stars. The goal is to survive, collect 10 stars, and earn a medal based on your performance time. Flip gravity, dodge obstacles, and prove your skills to claim the **Gold Medal**! 🥇
