@@ -32,15 +32,22 @@ public class MovingStar : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            // Notify the GameTimer of the collected star
-            GameTimer gameTimer = Object.FindFirstObjectByType<GameTimer>(); // Updated method
+            // Trigger the particle effect
+            ParticleSystem particleSystem = GetComponentInChildren<ParticleSystem>();
+            if (particleSystem != null)
+            {
+                particleSystem.Play();
+            }
+
+            // Notify GameTimer and destroy the star
+            GameTimer gameTimer = Object.FindFirstObjectByType<GameTimer>();
             if (gameTimer != null)
             {
                 gameTimer.AddStar();
             }
 
-            // Destroy the star when collected
-            Destroy(gameObject);
+            Destroy(gameObject, 0.5f); // Wait briefly to let the effect play
         }
     }
+
 }

@@ -5,7 +5,6 @@ public class GameTimer : MonoBehaviour
 {
     public TextMeshProUGUI timerText; // Drag your TimerText here in the Inspector
     public TextMeshProUGUI objectiveText; // Drag the ObjectiveText here
-    public TextMeshProUGUI victoryText; // Drag your VictoryText from the VictoryPanel
     public int starsToWin = 10; // Number of stars needed to win
 
     private float elapsedTime = 0f; // Time tracker
@@ -43,45 +42,35 @@ public class GameTimer : MonoBehaviour
         if (starsCollected >= starsToWin && !gameWon)
         {
             gameWon = true; // Prevent further updates after winning
-            AssignMedal(); // Assign the appropriate medal
             Debug.Log("You Win!");
+
+            // Determine the medal and pass it to the VictoryManager
+            string medal = DetermineMedal();
 
             VictoryManager victoryManager = Object.FindFirstObjectByType<VictoryManager>();
             if (victoryManager != null)
             {
-                victoryManager.ShowVictoryScreen(); // Show the Victory Screen
+                victoryManager.ShowVictoryScreen(medal); // Pass the medal to the Victory Screen
             }
         }
     }
 
-    private void AssignMedal()
+    private string DetermineMedal()
     {
-        string medal = "";
-
         // Determine the medal based on elapsed time
         if (elapsedTime <= goldThreshold)
         {
-            medal = "Gold";
+            return "Gold";
         }
         else if (elapsedTime <= silverThreshold)
         {
-            medal = "Silver";
+            return "Silver";
         }
         else if (elapsedTime <= bronzeThreshold)
         {
-            medal = "Bronze";
-        }
-        else
-        {
-            medal = "No Medal"; // If the time exceeds all thresholds
+            return "Bronze";
         }
 
-        // Update the VictoryText with the medal information
-        if (victoryText != null)
-        {
-            victoryText.text = "You Win!\nMedal: " + medal;
-        }
-
-        Debug.Log("Player earned: " + medal);
+        return ""; // No medal if it doesn't meet any threshold
     }
 }
