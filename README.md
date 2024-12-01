@@ -103,7 +103,6 @@ void SpawnPowerUp()
 
 ---
 
-Let me know if you'd like me to expand or refine this further! 😊
 #### **Victory System**  
 The `VictoryManager.cs` script displays a victory screen with a medal based on the player's performance.  
 **Key code snippet**:  
