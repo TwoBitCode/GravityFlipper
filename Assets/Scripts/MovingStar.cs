@@ -39,15 +39,17 @@ public class MovingStar : MonoBehaviour
                 particleSystem.Play();
             }
 
-            // Notify GameTimer and destroy the star
+            // Notify GameTimer
             GameTimer gameTimer = Object.FindFirstObjectByType<GameTimer>();
             if (gameTimer != null)
             {
                 gameTimer.AddStar();
             }
 
-            Destroy(gameObject, 0.5f); // Wait briefly to let the effect play
+            // Destroy the star immediately
+            Destroy(gameObject);
         }
     }
+
 
 }

@@ -403,7 +403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 585048287}
   objectiveText: {fileID: 721682207}
-  starsToWin: 1
+  starsToWin: 10
   goldThreshold: 60
   silverThreshold: 120
   bronzeThreshold: 160
@@ -1135,7 +1135,7 @@ MonoBehaviour:
   hazardPrefabs:
   - {fileID: 6284008986665868152, guid: be0cc6e2e5d488f40a1ad8785a6d9fa9, type: 3}
   - {fileID: 6284008986665868152, guid: 125d71a94741b364992be6003a55d39c, type: 3}
-  spawnInterval: 7
+  spawnInterval: 2.5
   spawnRangeX: {x: -7, y: 7}
   spawnRangeY: {x: -3, y: 3}
 --- !u!4 &1315363290
@@ -1501,7 +1501,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.05146289, y: -0.013339043}
+  m_Offset: {x: 0.021924019, y: -0.013339043}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1511,7 +1511,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.116218, y: 2.2894359}
+  m_Size: {x: 4.262992, y: 2.2894359}
   m_EdgeRadius: 0
 --- !u!114 &1621054882
 MonoBehaviour:
