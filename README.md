@@ -3,7 +3,6 @@
 ![image](https://github.com/user-attachments/assets/79e87a12-0783-4d7f-a35d-dfc93261df7a)
 
 🎮 **Play now on Itch.io**: [Gravity Flipper on Itch.io](https://twobitcode.itch.io/gravityflipper)  
-💻 **View the Source Code**: [Gravity Flipper on GitHub](https://github.com/TwoBitCode/GravityFlipper)
 
 ---
 
