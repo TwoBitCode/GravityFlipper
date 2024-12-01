@@ -63,7 +63,6 @@ void SpawnHazard()
     Instantiate(hazardPrefab, new Vector3(randomX, randomY, 0f), Quaternion.identity);
 }
 ```
-
 ---
 
 #### **Player Movement**  
@@ -73,9 +72,38 @@ The `PlayerMovement.cs` script ensures smooth horizontal movement using keyboard
 float move = Input.GetAxis("Horizontal");
 transform.Translate(new Vector3(move, 0, 0) * speed * Time.deltaTime);
 ```
+---
+#### **Dynamic Stars**  
+The `MovingStar.cs` script creates stars that move dynamically in random directions and ensures they are destroyed if they go out of bounds or are collected by the player.  
+**Key code snippet**:  
+```csharp
+Vector2 randomDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+GetComponent<Rigidbody2D>().linearVelocity = randomDirection * moveSpeed;
+
+// Destroy the star after 3 seconds if not collected
+Destroy(gameObject, 3f);
+```
+- When the player collects a star, it triggers a particle effect and notifies the game timer.  
 
 ---
 
+#### **Power-Up Spawning**  
+The `PowerUpSpawner.cs` script manages the spawning of power-ups at regular intervals in random positions, giving the player opportunities to disable hazards temporarily.  
+**Key code snippet**:  
+```csharp
+void SpawnPowerUp()
+{
+    float randomX = Random.Range(spawnRangeX.x, spawnRangeX.y);
+    float randomY = Random.Range(spawnRangeY.x, spawnRangeY.y);
+
+    Instantiate(powerUpPrefab, new Vector3(randomX, randomY, 0f), Quaternion.identity);
+}
+```
+- Power-ups spawn every 10 seconds (adjustable) in random positions within specified boundaries.  
+
+---
+
+Let me know if you'd like me to expand or refine this further! 😊
 #### **Victory System**  
 The `VictoryManager.cs` script displays a victory screen with a medal based on the player's performance.  
 **Key code snippet**:  
