@@ -36,8 +36,6 @@ void FlipGravity()
     transform.rotation = Quaternion.Euler(0, 0, isGravityFlipped ? 180 : 0);
 }
 ```
-[View full script](#381†source)
-
 ---
 
 #### **Hazard Management**  
@@ -51,8 +49,6 @@ public void DisableHazards(float duration)
     StartCoroutine(ReenableHazards(duration));
 }
 ```
-[View full script](#382†source)
-
 ---
 
 #### **Dynamic Hazard Spawning**  
@@ -67,7 +63,6 @@ void SpawnHazard()
     Instantiate(hazardPrefab, new Vector3(randomX, randomY, 0f), Quaternion.identity);
 }
 ```
-[View full script](#383†source)
 
 ---
 
@@ -78,7 +73,6 @@ The `PlayerMovement.cs` script ensures smooth horizontal movement using keyboard
 float move = Input.GetAxis("Horizontal");
 transform.Translate(new Vector3(move, 0, 0) * speed * Time.deltaTime);
 ```
-[View full script](#386†source)
 
 ---
 
@@ -94,7 +88,6 @@ switch (medal.ToLower())
     case "bronze": medalImage.sprite = bronzeMedal; break;
 }
 ```
-[View full script](#390†source)
 
 ---
 
